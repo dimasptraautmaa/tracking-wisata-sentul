@@ -1,0 +1,32 @@
+import React from 'react'
+import Hero from '../components/hero/hero'
+import Navbar from '../components/navbar/navbar'
+import Navmobile from '../components/navbar/navmobile'
+import SwiperCard from "../components/swiper/swiper"
+import alam1 from "/img/alam1.jpg"
+import "./landingpage.css"
+import Connector from '../components/connector/connector'
+import Paket from '../components/paket/paket'
+
+const LandingPage = () => {
+    return (
+        <>
+            <div className='single-page'>
+                <div className='wrapper-background'>
+                    <div className='landing-background' style={{  
+                        background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.98)), url(${alam1})`,
+                        backgroundPosition: "center",
+                        backgroundSize: "cover"
+                    }}></div>
+                </div>
+                <Navmobile/>
+                <Navbar/>
+                <Hero/>
+            </div>
+           <SwiperCard/>
+           <Paket/>
+        </>
+    )
+}
+
+export default LandingPage;
