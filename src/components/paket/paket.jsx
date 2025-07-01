@@ -101,7 +101,7 @@ const Paket = () => {
                 </SwiperSlide>
             </Swiper>
             </div>
-            <div className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.98), var(--background))`, padding: '50px 0' }}>
+            <div className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.98), var(--background), rgba(0,0,0,0.98))`, padding: '50px 0' }}>
                 <div className='paket-card-container'>
                     <div className='paket-card-level'>
                         <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'easy' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
@@ -138,7 +138,7 @@ const Paket = () => {
                     <div className='paket-card-wrapper'>
                         {(extremeData.map((i, k) => {
                             return(
-                               <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                               <div key={k} className='paket-card' style={{ background: i.img ? `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})` : 'red', backgroundPosition: 'center', backgroundSize: 'cover' }}>
                                     <div className='paket-card-title'>
                                         <div>{i.level}</div>
                                         <div>{i.title}</div>
@@ -147,7 +147,70 @@ const Paket = () => {
                             )
                         }))}
                     </div>}
-                    
+                </div>
+            </div>
+            <div className='page' 
+                style={{ 
+                    background: "linear-gradient(to bottom, rgba(0,0,0,0.98), rgba(0,0,0,0.85), rgba(0,0,0,0.98)), url('img/img3.jpeg')", 
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    padding: '0 20px',
+                    paddingBottom: '50px',
+                    flexDirection: 'column',
+                    display: 'flex',
+                    gap: '15px',
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center',
+                    position: 'relative'
+                }}
+            >
+                <div className='box-large glass'>
+                    <div style={{ color: 'var(--green)', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}>TREKKING WISATA SENTUL</div>
+                    <div style={{ color: '#cccccce0', fontFamily: 'var(--quicksand)', fontSize: '0.99rem', marginTop: '5px', lineHeight: '1.5' }}>Mari bergabung dalam petualangan alam yang menakjubkan! Sambutlah keindahan alam Sentul bersama kami di Trekking Wisata Sentul. Bersiaplah untuk menjelajahi hutan, merasakan kesegaran air terjun, dan menaklukkan perbukitan yang menarik. Bersama kami buat kenangan luar biasa dalam perjalanan trekking.</div>
+                    <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'var(--quicksand)', color: 'white', fontSize: '1rem', gap: '15px', marginTop: '30px' }}>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                            <div className='fas fa-circle-check fa-lg'/>
+                            <div>Provider Resmi dan sudah berizin</div>
+                        </div>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                            <div className='fas fa-circle-check fa-lg'/>
+                            <div>Berisi Tim dan Pemandu Profesional</div>
+                        </div>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                            <div className='fas fa-circle-check fa-lg'/>
+                            <div>Asuransi & Kesehatan</div>
+                        </div>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                            <div className='fas fa-circle-check fa-lg'/>
+                            <div>Perlengkapan & Include lengkap</div>
+                        </div>
+                        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                            <div className='fas fa-circle-check fa-lg'/>
+                            <div>Jaminan Uang Kembali</div>
+                        </div>
+                    </div>
+                </div>
+                <div className='box-container'>
+                    <div className='box-small glass'>
+                        <div className='fas fa-map fa-lg' style={{color: 'var(--green)'}}></div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>20+</div>
+                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Rute Spesial Kami</div>
+                    </div>
+                    <div className='box-small glass'>
+                        <div className='fas fa-note-sticky fa-lg' style={{color: 'var(--green)'}}></div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>2500+</div>
+                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Client trekking bersama kami</div>
+                    </div>
+                    <div className='box-small glass'>
+                        <div className='fas fa-clock fa-lg' style={{color: 'var(--green)'}}></div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>5+</div>
+                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Kami menjadi provider</div>
+                    </div>
+                    <div className='box-small glass'>
+                        <div className='fas fa-person-walking fa-xl' style={{color: 'var(--green)'}}></div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>45+</div>
+                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Tour Guide Profesional</div>
+                    </div>
                 </div>
             </div>
         </>

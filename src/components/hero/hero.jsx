@@ -15,7 +15,7 @@ const Hero = () => {
 
     return (
         <div className='hero'>
-            <div style={{width: 'max-content', padding: '8px 20px', color: 'var(--text)', borderRadius: '30px', border: '1px solid var(--text)', font: '0.85rem sans-serif', marginBottom: '10px'}}>Powered By OpenAI</div>
+            <div style={{width: 'max-content', padding: '8px 20px', color: 'var(--text)', borderRadius: '30px', border: '1px solid var(--text)', font: '0.85rem sans-serif', marginBottom: '10px'}}>Best Trekking Service</div>
             <div className='hero-wrapper'>
                 <h1 className='hero-title'><span>Trekking Wisata</span> Sentul</h1>
                 <h3 className='hero-desc'>Trekking Wisata Sentul | Paket Trekking Sentul | Jasa Trekking Sentul | Trekking Sentul Murah Terbaik</h3>
