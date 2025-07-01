@@ -31,7 +31,7 @@ const SwiperCard = () => {
                 {Array.from({ length: 10 }).map((_, i) => {
                     return(
                     <SwiperSlide key={i} style={{borderRadius: '7px', backgroundPosition: 'center', width: '300px', height: '230px', backgroundSize: 'cover', }}>
-                        <img loading='lazy' src={`img/img${i + 3}.jpeg`} alt="" />
+                        <img src={`img/img${i + 3}.jpeg`} alt="" />
                     </SwiperSlide>
                     )
                 })}
