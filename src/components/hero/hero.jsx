@@ -17,7 +17,7 @@ const Hero = () => {
         <div className='hero'>
             <div className='hero-mark' style={{width: 'max-content', padding: '8px 20px', color: 'var(--text)', borderRadius: '30px', border: '1px solid var(--text)', font: '0.85rem sans-serif', marginBottom: '10px'}}>Best Trekking Provider</div>
             <div className='hero-wrapper'>
-                <h1 className='hero-title'><span>Trekking Wisata</span> Sentul</h1>
+                <h1 className='hero-title'><span>Trekking Sentul</span> 44</h1>
                 <h3 className='hero-desc'>Trekking Wisata Sentul | Paket Trekking Sentul | Jasa Trekking Sentul | Trekking Sentul Murah Terbaik</h3>
             </div>
             <div className='hero-button' style={{display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px', position: 'relative', width: '100%'}}>

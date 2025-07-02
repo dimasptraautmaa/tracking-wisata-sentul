@@ -37,7 +37,7 @@ const Paket = () => {
                 <div
                 slot="container-start"
                 className="parallax-bg"
-                style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.98), rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.98)), url('img/img1.jpeg')`, backgroundPosition: 'center', backgroundSize: 'cover'}}
+                style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95)), url('img/img1.jpeg')`, backgroundPosition: 'center', backgroundSize: 'cover'}}
                 data-swiper-parallax="-23%"
                 ></div>
                 <SwiperSlide className='swiper-paket'>
@@ -106,7 +106,7 @@ const Paket = () => {
                 </SwiperSlide>
             </Swiper>
             </div>
-            <div id='bestPaket' className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.98), var(--background), rgba(0,0,0,0.98))`, padding: '50px 0' }}>
+            <div id='bestPaket' className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), var(--background), rgba(0,0,0,0.9))`, padding: '50px 0' }}>
                 <div className='paket-card-container'>
                     <div className='paket-card-level'>
                         <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'easy' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
@@ -117,7 +117,7 @@ const Paket = () => {
                     <div className='paket-card-wrapper'>
                         {(easyData.map((i, k) => {
                             return(
-                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.95) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
                                     <div className='paket-card-title'>
                                         <div>{i.level}</div>
                                         <div>{i.title}</div>
@@ -156,7 +156,7 @@ const Paket = () => {
             </div>
             <div className='page' 
                 style={{ 
-                    background: "linear-gradient(to bottom, rgba(0,0,0,0.98), rgba(0,0,0,0.85), rgba(0,0,0,0.98)), url('img/img3.jpeg')", 
+                    background: "linear-gradient(to bottom, rgba(0,0,0,0.98), rgba(0,0,0,0.45), rgba(0,0,0,0.98)), url('img/img3.jpeg')", 
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     padding: '0 20px',
