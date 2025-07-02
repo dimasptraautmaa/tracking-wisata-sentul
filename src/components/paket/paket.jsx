@@ -1,12 +1,13 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Parallax, Pagination, Navigation } from 'swiper/modules';
+import { Parallax, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { easyData, extremeData, mediumData } from '../../../data/paketData';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './paket.css'
+import SwiperCard from '../swiper/swiper';
 
 const Paket = () => {
 
@@ -20,13 +21,17 @@ const Paket = () => {
                 '--swiper-navigation-color': '#fff',
                 '--swiper-pagination-color': 'var(--green)',
                 }}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: true,
+                }}
                 speed={700}
                 parallax={true}
                 pagination={{
                 clickable: true,
                 }}
                 navigation={true}
-                modules={[Parallax, Pagination, Navigation]}
+                modules={[Parallax, Pagination, Navigation, Autoplay]}
                 className="mySwiper"
             >
                 <div
@@ -101,12 +106,12 @@ const Paket = () => {
                 </SwiperSlide>
             </Swiper>
             </div>
-            <div className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.98), var(--background), rgba(0,0,0,0.98))`, padding: '50px 0' }}>
+            <div id='bestPaket' className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.98), var(--background), rgba(0,0,0,0.98))`, padding: '50px 0' }}>
                 <div className='paket-card-container'>
                     <div className='paket-card-level'>
                         <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'easy' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
                         <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'medium' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Medium</div>
-                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'extreme' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
+                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'extreme' ? 'red' : 'red', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
                     </div>
                     {(level == 'easy') && 
                     <div className='paket-card-wrapper'>
@@ -165,7 +170,7 @@ const Paket = () => {
                 }}
             >
                 <div className='box-large glass'>
-                    <div style={{ color: 'var(--green)', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}>TREKKING WISATA SENTUL</div>
+                    <div style={{ color: 'white', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}><span>TREKKING WISATA</span> SENTUL</div>
                     <div style={{ color: '#cccccce0', fontFamily: 'var(--quicksand)', fontSize: '0.99rem', marginTop: '5px', lineHeight: '1.5' }}>Mari bergabung dalam petualangan alam yang menakjubkan! Sambutlah keindahan alam Sentul bersama kami di Trekking Wisata Sentul. Bersiaplah untuk menjelajahi hutan, merasakan kesegaran air terjun, dan menaklukkan perbukitan yang menarik. Bersama kami buat kenangan luar biasa dalam perjalanan trekking.</div>
                     <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'var(--quicksand)', color: 'white', fontSize: '1rem', gap: '15px', marginTop: '30px' }}>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
@@ -204,7 +209,7 @@ const Paket = () => {
                     <div className='box-small glass'>
                         <div className='fas fa-clock fa-lg' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>5+</div>
-                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Kami menjadi provider</div>
+                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Tahun Kami menjadi provider</div>
                     </div>
                     <div className='box-small glass'>
                         <div className='fas fa-person-walking fa-xl' style={{color: 'var(--green)'}}></div>

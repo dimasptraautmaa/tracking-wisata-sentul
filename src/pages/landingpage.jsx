@@ -7,6 +7,7 @@ import alam1 from "/img/alam1.jpg"
 import "./landingpage.css"
 import Connector from '../components/connector/connector'
 import Paket from '../components/paket/paket'
+import Testimoni from '../components/testimoni/testimoni'
 
 const LandingPage = () => {
     return (
@@ -25,6 +26,7 @@ const LandingPage = () => {
             </div>
            <SwiperCard/>
            <Paket/>
+           <Testimoni/>
         </>
     )
 }

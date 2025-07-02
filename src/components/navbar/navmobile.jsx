@@ -20,17 +20,9 @@ const Navmobile = () => {
         navmobile.classList.remove('show');
     }
 
-    const logout = async () => {
-        try {
-            setLoading(true);
-            const response = await axios.get(`${endpoint}/logout/client`)
-            response.data.msg && await swalert(response.data.msg, "success", 2500);
-            window.location.reload();
-        } catch (error) {
-            error.response && swalert(error.response.data, "error", 2500);
-        } finally {
-            setLoading(false);
-        }
+    const handleclick = () => {
+        const navmobile = document.querySelector('.navmobile');
+        navmobile.classList.contains('show') && navmobile.classList.remove('show');
     }
 
     // React.useEffect(() => {
@@ -41,29 +33,43 @@ const Navmobile = () => {
     if (loading) return <Loader/>
 
     return (
-        <div className='navmobile'>
+        <div onClick={() => handleclick()} className='navmobile glass'>
             <div className='top-nav'>
                 <div className='nav-logo'>
-                    <img src="/img/logo.ico" width={28} alt="stresslo logo" />
-                    <h1>stresslo</h1>
+                    <img src="/img/logo.png" width={28} alt="stresslo logo" />
+                    <h1 style={{color: 'white', fontWeight: '500', fontSize: '1rem'}}>Trekkingsentul44</h1>
                 </div>
-                <div className='fa-solid fa-xmark fa-xl' onClick={() => hide()} style={{color: 'var(--yellow)'}}></div>
+                <div className='fa-solid fa-xmark fa-xl' onClick={() => hide()} style={{color: 'white'}}></div>
             </div>
             <div className='bot-nav'>
-                <NavLink to={context.username ? "/user" : "/login"} className='bot-nav-item' style={{boxShadow: 'unset'}}>
-                    <div className='fa-solid fa-circle-user fa-lg'></div>
-                    <h1 style={{fontSize: '0.8rem', color: 'var(--yellow)', fontFamily: 'sans-serif'}}>{context.username ? context.username : "Sign in"}</h1>
-                </NavLink>
-                <NavLink className='bot-nav-item ' style={{boxShadow: 'unset'}}>
+                <a className='bot-nav-item glass' style={{boxShadow: 'unset'}}>
+                    <div className='fa-solid fa-circle-info fa-lg'></div>
+                    <h1 style={{fontSize: '0.8rem', color: 'white', fontFamily: 'sans-serif'}}>Tentang Kami</h1>
+                </a>
+                <a href='#paket' className='bot-nav-item glass ' style={{boxShadow: 'unset'}}>
+                    <div className='fa-solid fa-list fa-lg'></div>
+                    <h1 style={{fontSize: '0.8rem', color: 'white', fontFamily: 'sans-serif'}}>Paket Trecking</h1>
+                </a>
+                <a href='#bestPaket' className='bot-nav-item glass ' style={{boxShadow: 'unset'}}>
                     <div className='fa-solid fa-fire fa-lg'></div>
-                    <h1 style={{fontSize: '0.8rem', color: 'var(--yellow)', marginLeft: '2px', fontFamily: 'sans-serif'}}>Top templates</h1>
+                    <h1 style={{fontSize: '0.8rem', color: 'white', marginLeft: '2px', fontFamily: 'sans-serif'}}>Paket Unggulan</h1>
+                </a>
+            </div>
+            <div className='bot-nav'>
+                <NavLink className='bot-nav-item glass' style={{boxShadow: 'unset'}}>
+                    <div className='fab fa-instagram fa-lg'></div>
+                    <h1 style={{fontSize: '0.8rem', color: 'white', fontFamily: 'sans-serif'}}>Instagram</h1>
                 </NavLink>
-                <NavLink className='bot-nav-item ' style={{boxShadow: 'unset'}}>
-                    <div className='fa-solid fa-circle-dollar-to-slot fa-lg'></div>
-                    <h1 style={{fontSize: '0.8rem', color: 'var(--yellow)', fontFamily: 'sans-serif'}}>Sell your project</h1>
+                <NavLink className='bot-nav-item glass' style={{boxShadow: 'unset'}}>
+                    <div className='fab fa-whatsapp fa-lg'></div>
+                    <h1 style={{fontSize: '0.8rem', color: 'white', marginLeft: '2px', fontFamily: 'sans-serif'}}>Whatsapp</h1>
+                </NavLink>
+                <NavLink className='bot-nav-item glass' style={{boxShadow: 'unset'}}>
+                    <div className='fa-solid fa-envelope fa-md'></div>
+                    <h1 style={{fontSize: '0.8rem', color: 'white', fontFamily: 'sans-serif'}}>Email</h1>
                 </NavLink>
             </div>
-            <div className='mid-nav-notification'>
+            {/* <div className='mid-nav-notification'>
                 <h1 style={{fontSize: '1rem', color: 'var(--text)', fontFamily: 'sans-serif'}}>Notification</h1>
                 <div style={{width: '100%', height: "200px", marginTop: '10px', boxShadow: 'unset', border: '1px solid var(--prime)', borderRadius: '4px'}}>
                     {(!notification.length) ?
@@ -116,7 +122,7 @@ const Navmobile = () => {
                     <h1 style={{fontSize: '0.8rem', color: 'var(--yellow)', fontFamily: 'sans-serif'}}>Keluar</h1>
                 </NavLink>
                 }
-            </div>
+            </div> */}
         </div>
     )
 }

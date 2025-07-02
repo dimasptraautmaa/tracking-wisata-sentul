@@ -16,8 +16,8 @@ const Navbar = () => {
             <div className='navbar'>
                 <div className='nav-logo'>
                     {/* <img src="/img/logo.ico" width={28} alt="stresslo logo" /> */}
-                    <img src="/img/logo.png" width={35} alt="" />
-                    <h1 style={{color: 'white', fontWeight: '500'}}>Trekkingsentul44</h1>
+                    <img src="/img/logo.png" width={28} alt="" />
+                    <h1 style={{color: 'white', fontWeight: '500', fontSize: '1rem'}}>Trekkingsentul44</h1>
                 </div>
                 <div className='nav-menu'>
                     <div className='nav-content'>
