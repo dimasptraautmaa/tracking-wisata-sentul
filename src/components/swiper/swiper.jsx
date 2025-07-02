@@ -1,5 +1,5 @@
 import React from 'react'
-import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -13,6 +13,12 @@ const SwiperCard = () => {
         <div className='page' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.98), var(--background)` }}>
             <Swiper
                 effect={'coverflow'}
+                loop={true}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: true,
+                }}
+                speed={700}
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={'auto'}
@@ -24,7 +30,7 @@ const SwiperCard = () => {
                 slideShadows: true,
                 }}
                 pagination={true}
-                modules={[EffectCoverflow, Pagination, Navigation]}
+                modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
                 className="mySwiper"
                 style={{ height: '300px', '--swiper-pagination-color': 'var(--green)', }}
             >
