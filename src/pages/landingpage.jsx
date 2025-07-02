@@ -22,7 +22,7 @@ const LandingPage = () => {
             <div ref={homeRef} className='single-page'>
                 <div className='wrapper-background'>
                     <div className='landing-background' style={{  
-                        background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.98)), url(${alam1})`,
+                        background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.98)), url(${alam1})`,
                         backgroundPosition: "center",
                         backgroundSize: "cover"
                     }}></div>
