@@ -5,7 +5,6 @@ import Navmobile from '../components/navbar/navmobile'
 import SwiperCard from "../components/swiper/swiper"
 import alam1 from "/img/alam1.jpg"
 import "./landingpage.css"
-import Connector from '../components/connector/connector'
 import Paket from '../components/paket/paket'
 import Testimoni from '../components/testimoni/testimoni'
 
