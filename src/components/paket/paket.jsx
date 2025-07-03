@@ -1,17 +1,22 @@
 import React from 'react'
+import trekData from './trekData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Parallax, Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { easyData, extremeData, mediumData } from '../../../data/paketData';
 
 import 'swiper/css';
+import './paket.css'
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import './paket.css'
-import SwiperCard from '../swiper/swiper';
 
 const Paket = () => {
 
     const [ level, setLevel ] = React.useState('easy');
+    const [ width, setWidth ] = React.useState(window.innerWidth);
+
+    const sliceText = (text) => {
+        return text.substring(0,153) + '...';
+    }
 
     return (
         <>
@@ -21,6 +26,7 @@ const Paket = () => {
                 '--swiper-navigation-color': '#fff',
                 '--swiper-pagination-color': 'var(--green)',
                 }}
+                grabCursor={true}
                 autoplay={{
                     delay: 5000,
                     disableOnInteraction: true,
@@ -37,73 +43,131 @@ const Paket = () => {
                 <div
                 slot="container-start"
                 className="parallax-bg"
-                style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95)), url('img/img1.jpeg')`, backgroundPosition: 'center', backgroundSize: 'cover'}}
+                style={{ 
+                    background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95)), url('img/img7.jpeg')`, 
+                    backgroundPosition: 'center', 
+                    backgroundSize: 'cover'
+                }}
                 data-swiper-parallax="-23%"
                 ></div>
-                <SwiperSlide className='swiper-paket'>
-                <div className='swiper-konten'>
-                    <div className='swiper-konten-title'>TRECK <span>EASY (A)</span></div>
-                    <div className='swiper-konten-desc'>Trecking Easy adalah cara yang ideal untuk memulai petualangan trecking Anda. Ini adalah pengalaman santai yang memungkinkan Anda menikmati keindahan alam sambil menjaga kenyamanan dan kesenangan.</div>
-                </div>
-                <div className='swiper-kotak glass'>
-                    <div className='swiper-kotak-container'>
-                        <div className='swiper-kotak-jarak'>Jarak <span>2-5 KM</span> | Waktu <span>2-3 Jam</span></div>
-                        <div className='swiper-kotak-rute'>Pesawahan, Sungai Sangkuriang, Hutan Pinus, Kebun Singkong, Pebukutan, Kebun Sereh, Curug Lewi</div>
-                    </div>
-                    <div className='swiper-kotak-harga'>
-                        <div>Mulai dari</div>
-                        <div>Rp 150.000</div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                <SwiperSlide className='swiper-paket'>
-                <div className='swiper-konten'>
-                    <div className='swiper-konten-title'>TRECK <span>EASY (B)</span></div>
-                    <div className='swiper-konten-desc'>Trecking Easy adalah cara yang ideal untuk memulai petualangan trecking Anda. Ini adalah pengalaman santai yang memungkinkan Anda menikmati keindahan alam sambil menjaga kenyamanan dan kesenangan.</div>
-                </div>
-                <div className='swiper-kotak glass'>
-                    <div className='swiper-kotak-container'>
-                        <div className='swiper-kotak-jarak'>Jarak <span>2-4 KM</span> | Waktu <span>2-3 Jam</span></div>
-                        <div className='swiper-kotak-rute'>Perkampungan penduduk, pesawahan, hutan kopi, air terjun Curug baring, lewi cepet, lewi liuk, perbukitan view pegunungan, curug lewi hejo</div>
-                    </div>
-                    <div className='swiper-kotak-harga'>
-                        <div>Mulai dari</div>
-                        <div>Rp 150.000</div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                <SwiperSlide className='swiper-paket'>
-                <div className='swiper-konten'>
-                    <div className='swiper-konten-title'>TRECK <span>EASY (D)</span></div>
-                    <div className='swiper-konten-desc'>Trecking Easy adalah cara yang ideal untuk memulai petualangan trecking Anda. Ini adalah pengalaman santai yang memungkinkan Anda menikmati keindahan alam sambil menjaga kenyamanan dan kesenangan.</div>
-                </div>
-                <div className='swiper-kotak glass'>
-                    <div className='swiper-kotak-container'>
-                        <div className='swiper-kotak-jarak'>Jarak <span>2-4 KM</span> | Waktu <span>2-3 Jam</span></div>
-                        <div className='swiper-kotak-rute'>Perkampungan, sungai putri kencana, perkebunan kopi, curug putri kencana, hutan bambu, curug love, perbukitan, hutam kopi</div>
-                    </div>
-                    <div className='swiper-kotak-harga'>
-                        <div>Mulai dari</div>
-                        <div>Rp 150.000</div>
-                    </div>
-                </div>
-                </SwiperSlide>
-                <SwiperSlide className='swiper-paket'>
-                <div className='swiper-konten'>
-                    <div className='swiper-konten-title'>TRECK <span>MEDIUM (C)</span></div>
-                    <div className='swiper-konten-desc'>Paket Trecking Medium adalah pilihan tepat bagi para petualang yang ingin merasakan tantangan sedang dalam menjelajahi keindahan alam Sentul. Ini adalah pengalaman yang menggabungkan kegembiraan petualangan dengan tingkat kesulitan yang moderat.</div>
-                </div>
-                <div className='swiper-kotak glass'>
-                    <div className='swiper-kotak-container'>
-                        <div className='swiper-kotak-jarak'>Jarak <span>7-8 KM</span> | Waktu <span>4-5 Jam</span></div>
-                        <div className='swiper-kotak-rute'>Hutan jaibon, perkebunan kopi, susur sungai, leuwi lesung, curug Ciburial, hutan kopi, curug kembar, curug hordeng, bukit</div>
-                    </div>
-                    <div className='swiper-kotak-harga'>
-                        <div>Mulai dari</div>
-                        <div>Rp 150.000</div>
-                    </div>
-                </div>
-                </SwiperSlide>
+                {trekData.map((i,k) => {
+                    return(
+                        <SwiperSlide key={k} className='swiper-paket'>
+                            <div className='swiper-konten'>
+                                {i.type &&
+                                <div className='glass' style={{ width: 'max-content', padding: '5px 30px', fontFamily: 'var(--quicksand)', fontWeight: 'bold', color: i.color, fontSize: '1.1rem', borderRadius: '50px', boxSizing: 'border-box', transform: 'translateY(5px)' }}>{i.type}</div>
+                                }
+                                <div className='swiper-konten-title'><span style={{color: i.color}}>{i.title}</span></div>
+                                <div className='swiper-konten-desc'>{i.desc}</div>
+                            </div>
+                            <div className='swiper-kotak glass'>
+                                <div className='swiper-kotak-container'>
+                                    <div style={{ fontFamily: 'var(--quicksand)', color: i.color, fontSize: '2rem', fontWeight: 'bold', textAlign: 'center' }}>{i.title.split("",(4))} {i.title.split(" ")[1]}</div>
+                                    <div style={{ fontFamily: 'var(--poppins)', color: 'white', fontSize: '1.1rem', textAlign: 'center', transform: 'translateY(-5px)' }}>{i.type ? `( ${i.type} )` : ''}</div>
+                                    <div className='swiper-kotak-jarak'>
+                                        <div style={{display: 'flex', gap: '7px', alignItems: 'center'}}>
+                                            <span style={{color: i.color}}><div className='fas fa-map-location-dot fa-sm'/></span>
+                                            <div>{i.jarak}</div>
+                                        </div>
+                                        <div>|</div>
+                                        <div style={{display: 'flex', gap: '7px', alignItems: 'center'}}>
+                                            <span style={{color: i.color}}><div className='fas fa-clock fa-sm'/></span>
+                                            <div>{i.waktu}</div>
+                                        </div>
+                                    </div>
+                                    <div className='swiper-kotak-rute'>
+                                        <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                                            <div className='circle glass'><div className='fas fa-location-dot fa-sm'/></div>
+                                            Rute yang bakal kamu lewatin :
+                                        </div>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
+                                            {i.rute.map((r, key) => {
+                                                return(
+                                                    <div className='flex-gap-inline' key={key}>
+                                                        <div>•</div>
+                                                        <div>{r}</div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                        {i.wisata && i.wisata[1] && 
+                                            <>
+                                            <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                                                <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
+                                                Zona wisata ke - 1
+                                            </div>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
+                                                {i.wisata[1].map((s, key) => {
+                                                    return(
+                                                        <div className='flex-gap-inline' key={key}>
+                                                            <div>•</div>
+                                                            <div>{s}</div>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                            </>
+                                        }
+                                        {i.wisata && i.wisata[2] && 
+                                            <>
+                                            <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                                                <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
+                                                Zona wisata ke - 2
+                                            </div>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
+                                                {i.wisata[2].map((d, key) => {
+                                                    return(
+                                                        <div className='flex-gap-inline' key={key}>
+                                                            <div>•</div>
+                                                            <div>{d}</div>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                            </>
+                                        }
+                                        {i.wisata && i.wisata[3] && 
+                                            <>
+                                            <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                                                <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
+                                                Zona wisata ke - 3
+                                            </div>
+                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
+                                                {i.wisata[3].map((t, key) => {
+                                                    return(
+                                                        <div className='flex-gap-inline' key={key}>
+                                                            <div>•</div>
+                                                            <div>{t}</div>
+                                                        </div>
+                                                    )
+                                                })}
+                                            </div>
+                                            </>
+                                        }
+                                        <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                                            <div className='circle glass'><div className='fas fa-box-open fa-sm'></div></div>
+                                            Fasilitas yang kamu dapat :
+                                        </div>
+                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
+                                            {i.pack.map((p, key) => {
+                                                return(
+                                                    <div className='flex-gap-inline' key={key}>
+                                                        <div>•</div>
+                                                        <div>{p}</div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className='swiper-kotak-harga'>
+                                        <div>Mulai dari</div>
+                                        <div>Rp 150.000</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    )
+                })}
             </Swiper>
             </div>
             <div id='bestPaket' className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), var(--background), rgba(0,0,0,0.9))`, padding: '50px 0' }}>
@@ -170,8 +234,13 @@ const Paket = () => {
                 }}
             >
                 <div className='box-large glass'>
-                    <div style={{ color: 'white', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}><span>TREKKING WISATA</span> SENTUL</div>
-                    <div style={{ color: '#cccccce0', fontFamily: 'var(--quicksand)', fontSize: '0.99rem', marginTop: '5px', lineHeight: '1.5' }}>Mari bergabung dalam petualangan alam yang menakjubkan! Sambutlah keindahan alam Sentul bersama kami di Trekking Wisata Sentul. Bersiaplah untuk menjelajahi hutan, merasakan kesegaran air terjun, dan menaklukkan perbukitan yang menarik. Bersama kami buat kenangan luar biasa dalam perjalanan trekking.</div>
+                    <div style={{ color: 'white', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}><span>TREKKING SENTUL</span> 44</div>
+                    <div style={{ color: '#cccccce0', fontFamily: 'var(--quicksand)', fontSize: '0.99rem', marginTop: '5px', lineHeight: '1.5' }}>
+                        Ayo Jelajahi Keajaiban Alam Sentul!
+                        Bergabunglah bersama kami dalam petualangan seru yang penuh keindahan alam! Rasakan sensasi menjelajahi hutan tropis yang asri, segarnya cipratan air terjun alami, dan panorama perbukitan yang memukau.
+                        Di TrekkingSentul44 setiap langkah adalah cerita, setiap momen adalah kenangan tak terlupakan.
+                        Siapkan dirimu alam sedang memanggil!
+                    </div>
                     <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'var(--quicksand)', color: 'white', fontSize: '1rem', gap: '15px', marginTop: '30px' }}>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                             <div className='fas fa-circle-check fa-lg'/>
