@@ -111,7 +111,7 @@ const DetailPaket = () => {
                     </div>
                     <div id={!i.wisata ? "thirdShow" : "lastShow"} className='swiper-kotak-harga'>
                         <div>Mulai dari</div>
-                        <div>Rp 150.000/Orang</div>
+                        <div>{i.harga}</div>
                     </div>
             </div>
         </div>
