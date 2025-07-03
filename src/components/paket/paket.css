@@ -51,7 +51,7 @@
     border-radius: 10px;
     padding: 30px 20px;
     box-sizing: border-box;
-    display: flex;
+    display: none;
     justify-content: space-between;
     overflow-y: scroll;
     flex-direction: column;
@@ -84,13 +84,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    text-align: center;
 }
 .swiper-kotak-harga div:nth-child(1) {
     font-size: 1rem;
     color: rgb(210, 210, 210);
 }
 .swiper-kotak-harga div:nth-child(2) {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: white;
     /* color: red; */
@@ -136,11 +137,17 @@
 .swiper-konten {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    width: 60%;
+    height: 300px;
+    width: 70%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
 }
 .swiper-konten-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
@@ -151,7 +158,6 @@
 .swiper-konten-desc {
     font-size: 1rem;
     color: white;
-    margin-top: 15px;
     line-height: 1.5;
 }
 

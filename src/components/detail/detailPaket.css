@@ -1,0 +1,58 @@
+.detail-paket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('/img/alam1.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.detail-paket-container {
+    width: 550px;
+    max-width: 100%;
+    padding: 30px 20px;
+    height: max-content;
+    box-sizing: border-box;
+    max-height: 100%;
+    overflow-y: scroll;
+    font-family: var(--quicksand);
+}
+.detail-paket-container::-webkit-scrollbar {
+  display: none;
+}
+
+#firstShow {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: showUp 0.3s linear 0.7s forwards;
+}
+
+#secondShow {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: showUp 0.3s linear 2s forwards;
+}
+
+#thirdShow {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: showUp 0.3s linear 3s forwards;
+}
+
+#lastShow {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: showUp 0.3s linear 4s forwards;
+}
+
+@keyframes showUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

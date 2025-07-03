@@ -5,6 +5,7 @@ const trekData = [
         title: 'TREKKING EASY',
         waktu: "2-3 Jam",
         jarak: "2-5 KM",
+        harga: "Rp 150.000/Orang",
         rute: [
             "Pesawahan",
             "Sungai Sangkuriang",
@@ -29,6 +30,7 @@ const trekData = [
         title: 'TREKKING EASY',
         waktu: "2-3 Jam",
         jarak: "2-4 KM",
+        harga: "Rp 150.000/Orang",
         rute: [
             "Perkampungan Penduduk",
             "Pesawahan",
@@ -54,6 +56,7 @@ const trekData = [
         title: 'TREKKING EASY',
         waktu: "2-3 Jam",
         jarak: "2-4 KM",
+        harga: "Rp 150.000/Orang",
         rute: [
             "Perkampungan Penduduk",
             "Sungai Putri Kencana",
@@ -80,6 +83,7 @@ const trekData = [
         title: 'TREKKING MEDIUM',
         waktu: "3-4 Jam",
         jarak: "7-8 KM",
+        harga: "Rp 165.000/Orang",
         rute: [
             "Susur Sungai",
             "Terasering & Pesawahan",
@@ -107,6 +111,7 @@ const trekData = [
         title: 'TREKKING MEDIUM',
         waktu: "3-4 Jam",
         jarak: "7-8 KM",
+        harga: "Rp 165.000/Orang",
         rute: [
             "Susur Sungai",
             "Terasering & Pesawahan",
@@ -136,6 +141,7 @@ const trekData = [
         title: 'TREKKING MEDIUM',
         waktu: "4-5 Jam",
         jarak: "7-8 KM",
+        harga: "Rp 165.000/Orang",
         rute: [
             "Hutan Jaibon",
             "Perkebunan Kopi",
@@ -165,6 +171,7 @@ const trekData = [
         title: 'TREKKING SEMI-EXTREME',
         waktu: "5-6 Jam",
         jarak: "12 KM",
+        harga: "Rp 195.000/Orang",
         rute: [
             "Perbukitan",
             "Kebun Singkong",

@@ -8,14 +8,15 @@ import 'swiper/css';
 import './paket.css'
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { useNavigate } from 'react-router-dom';
 
 const Paket = () => {
 
     const [ level, setLevel ] = React.useState('easy');
-    const [ width, setWidth ] = React.useState(window.innerWidth);
+    const navigate = useNavigate();
 
     const sliceText = (text) => {
-        return text.substring(0,153) + '...';
+        return text.substring(0,55) + '...';
     }
 
     return (
@@ -53,12 +54,15 @@ const Paket = () => {
                 {trekData.map((i,k) => {
                     return(
                         <SwiperSlide key={k} className='swiper-paket'>
-                            <div className='swiper-konten'>
-                                {i.type &&
-                                <div className='glass' style={{ width: 'max-content', padding: '5px 30px', fontFamily: 'var(--quicksand)', fontWeight: 'bold', color: i.color, fontSize: '1.1rem', borderRadius: '50px', boxSizing: 'border-box', transform: 'translateY(5px)' }}>{i.type}</div>
-                                }
+                            <div className='swiper-konten glass'>
+                                {i.type && <div className='glass' style={{ width: 'max-content', padding: '5px 30px', fontFamily: 'var(--quicksand)', fontWeight: 'bold', color: i.color, fontSize: '1.1rem', borderRadius: '50px', boxSizing: 'border-box' }}>{i.type}</div>}
                                 <div className='swiper-konten-title'><span style={{color: i.color}}>{i.title}</span></div>
-                                <div className='swiper-konten-desc'>{i.desc}</div>
+                                {/* <div className='swiper-konten-desc'>{sliceText(i.desc)}</div> */}
+                                    <div style={{ marginTop:'20px' }} className='swiper-kotak-harga'>
+                                        <div>Mulai dari</div>
+                                        <div>{i.harga}</div>
+                                    </div>
+                                <div onClick={() => navigate('/paket/detail', { state: i })} className='button' style={{ width: '200px', backgroundColor: i.color, marginTop: '10px' }}>Detail Paket</div>
                             </div>
                             <div className='swiper-kotak glass'>
                                 <div className='swiper-kotak-container'>
@@ -161,7 +165,7 @@ const Paket = () => {
                                     </div>
                                     <div className='swiper-kotak-harga'>
                                         <div>Mulai dari</div>
-                                        <div>Rp 150.000</div>
+                                        <div>{i.harga}</div>
                                     </div>
                                 </div>
                             </div>

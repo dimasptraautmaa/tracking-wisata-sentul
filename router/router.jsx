@@ -8,6 +8,7 @@ import LandingPage from "../src/pages/landingpage";
 import Register from "../src/pages/auth/register";
 import Google from "../src/pages/auth/google";
 import Login from "../src/pages/auth/login";
+import DetailPaket from "../src/components/detail/detailPaket";
 
 const Router = () => {
 
@@ -52,9 +53,9 @@ const Router = () => {
     }
   }, [token])
 
-  React.useState(() => {
-    initCookie().then(() => initData());
-  }, [])
+  // React.useState(() => {
+  //   initCookie().then(() => initData());
+  // }, [])
 
   const value = { token, username, shopname, cliendID, setToken };
 
@@ -66,6 +67,7 @@ const Router = () => {
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/dashboard" element={<Dashborad/>}/>
+          <Route path="/paket/detail" element={<DetailPaket/>}/> 
           <Route path="/auth/google/callback" element={<Google/>}/>
         </Routes>
       </Routing>
