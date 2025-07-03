@@ -16,29 +16,66 @@
   position: relative;
 }
 
+.swiper-kotak-mark {
+    padding: 3px 30px;
+    box-sizing: border-box;
+    border-radius: 50px;
+    color: #202020;
+    font-weight: bold;
+    background-color: var(--green);
+    font-family: var(--quicksand);
+    font-size: 1rem;
+    width: max-content;
+    margin: auto;
+}
+
+.circle.glass {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.flex-gap-inline {
+    display: flex;
+    gap: 5px;
+    align-items: top;
+}
+
 .swiper-kotak {
-    width: 350px;
-    height: max-content;
-    min-height: 350px;
+    width: 45%;
+    height: 550px;
+    min-height: 450px;
     border-radius: 10px;
     padding: 30px 20px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    overflow-y: scroll;
     flex-direction: column;
     gap: 20px;
+}
+.swiper-kotak::-webkit-scrollbar {
+  display: none;
 }
 
 .swiper-kotak-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
 }
 
 .swiper-kotak-jarak {
     font-weight: bold;
     text-align: center;
     color: white;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
 }
 
 .swiper-kotak-harga {
@@ -46,16 +83,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 .swiper-kotak-harga div:nth-child(1) {
     font-size: 1rem;
-    color: rgb(200, 200, 200);
+    color: rgb(210, 210, 210);
 }
 .swiper-kotak-harga div:nth-child(2) {
     font-size: 2.2rem;
     font-weight: bold;
-    /* color: white; */
-    color: red;
+    color: white;
+    /* color: red; */
 }
 
 .box-container {
@@ -92,7 +130,7 @@
 .swiper-kotak-rute {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: rgb(200, 200, 200);
+    color: white;
 }
 
 .swiper-konten {
@@ -112,7 +150,7 @@
 
 .swiper-konten-desc {
     font-size: 1rem;
-    color: #ccc;
+    color: white;
     margin-top: 15px;
     line-height: 1.5;
 }
@@ -197,7 +235,7 @@
     .swiper-paket{
         flex-direction: column;
         justify-content: space-between;
-        gap: 30px;
+        gap: 10px;
     }
 
     .swiper-konten {
