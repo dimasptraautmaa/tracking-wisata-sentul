@@ -2,10 +2,11 @@ import React from 'react'
 
 
 import "./detailPaket.css"
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const DetailPaket = () => {
 
+    const navigate = useNavigate();
     const location = useLocation();
     const i = location.state;
 
@@ -112,6 +113,13 @@ const DetailPaket = () => {
                     <div id={!i.wisata ? "thirdShow" : "lastShow"} className='swiper-kotak-harga'>
                         <div>Mulai dari</div>
                         <div>{i.harga}</div>
+                    </div>
+                    <div id={!i.wisata ? "thirdShow" : "lastShow"} style={{ display: 'flex', gap: '15px', justifyContent: 'center', marginTop: '30px', width: '100%' }}>
+                        <div className='button' style={{ width: '170px', fontSize: '0.85rem', backgroundColor: 'var(--primary)', color: 'white' }} onClick={() => navigate(-1)}>Paket lainnya</div>
+                        <div className='button' style={{ width: '170px', fontSize: '0.85rem', backgroundColor: i.color, gap: '5px' }}>
+                            <div className='fab fa-whatsapp fa-xl'/>
+                            Pesan paket
+                        </div>
                     </div>
             </div>
         </div>

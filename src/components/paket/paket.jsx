@@ -12,12 +12,10 @@ import { useNavigate } from 'react-router-dom';
 
 const Paket = () => {
 
-    const [ level, setLevel ] = React.useState('easy');
     const navigate = useNavigate();
 
-    const sliceText = (text) => {
-        return text.substring(0,55) + '...';
-    }
+    const [ level, setLevel ] = React.useState('easy');
+    const [ initialSlide, setInitialSlide ] = React.useState(localStorage.getItem('lastSlide') | 0);
 
     return (
         <>
@@ -31,6 +29,10 @@ const Paket = () => {
                 autoplay={{
                     delay: 5000,
                     disableOnInteraction: true,
+                }}
+                initialSlide={initialSlide}
+                onSlideChange={(swiper) => {
+                    localStorage.setItem('lastSlide', swiper.activeIndex);
                 }}
                 speed={700}
                 parallax={true}
@@ -62,111 +64,9 @@ const Paket = () => {
                                         <div>Mulai dari</div>
                                         <div>{i.harga}</div>
                                     </div>
-                                <div onClick={() => navigate('/paket/detail', { state: i })} className='button' style={{ width: '200px', backgroundColor: i.color, marginTop: '10px' }}>Detail Paket</div>
-                            </div>
-                            <div className='swiper-kotak glass'>
-                                <div className='swiper-kotak-container'>
-                                    <div style={{ fontFamily: 'var(--quicksand)', color: i.color, fontSize: '2rem', fontWeight: 'bold', textAlign: 'center' }}>{i.title.split("",(4))} {i.title.split(" ")[1]}</div>
-                                    <div style={{ fontFamily: 'var(--poppins)', color: 'white', fontSize: '1.1rem', textAlign: 'center', transform: 'translateY(-5px)' }}>{i.type ? `( ${i.type} )` : ''}</div>
-                                    <div className='swiper-kotak-jarak'>
-                                        <div style={{display: 'flex', gap: '7px', alignItems: 'center'}}>
-                                            <span style={{color: i.color}}><div className='fas fa-map-location-dot fa-sm'/></span>
-                                            <div>{i.jarak}</div>
-                                        </div>
-                                        <div>|</div>
-                                        <div style={{display: 'flex', gap: '7px', alignItems: 'center'}}>
-                                            <span style={{color: i.color}}><div className='fas fa-clock fa-sm'/></span>
-                                            <div>{i.waktu}</div>
-                                        </div>
-                                    </div>
-                                    <div className='swiper-kotak-rute'>
-                                        <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
-                                            <div className='circle glass'><div className='fas fa-location-dot fa-sm'/></div>
-                                            Rute yang bakal kamu lewatin :
-                                        </div>
-                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
-                                            {i.rute.map((r, key) => {
-                                                return(
-                                                    <div className='flex-gap-inline' key={key}>
-                                                        <div>•</div>
-                                                        <div>{r}</div>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                        {i.wisata && i.wisata[1] && 
-                                            <>
-                                            <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
-                                                <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
-                                                Zona wisata ke - 1
-                                            </div>
-                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
-                                                {i.wisata[1].map((s, key) => {
-                                                    return(
-                                                        <div className='flex-gap-inline' key={key}>
-                                                            <div>•</div>
-                                                            <div>{s}</div>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                            </>
-                                        }
-                                        {i.wisata && i.wisata[2] && 
-                                            <>
-                                            <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
-                                                <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
-                                                Zona wisata ke - 2
-                                            </div>
-                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
-                                                {i.wisata[2].map((d, key) => {
-                                                    return(
-                                                        <div className='flex-gap-inline' key={key}>
-                                                            <div>•</div>
-                                                            <div>{d}</div>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                            </>
-                                        }
-                                        {i.wisata && i.wisata[3] && 
-                                            <>
-                                            <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
-                                                <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
-                                                Zona wisata ke - 3
-                                            </div>
-                                            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
-                                                {i.wisata[3].map((t, key) => {
-                                                    return(
-                                                        <div className='flex-gap-inline' key={key}>
-                                                            <div>•</div>
-                                                            <div>{t}</div>
-                                                        </div>
-                                                    )
-                                                })}
-                                            </div>
-                                            </>
-                                        }
-                                        <div style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
-                                            <div className='circle glass'><div className='fas fa-box-open fa-sm'></div></div>
-                                            Fasilitas yang kamu dapat :
-                                        </div>
-                                        <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', paddingLeft: '40px', marginTop: '5px' }}>
-                                            {i.pack.map((p, key) => {
-                                                return(
-                                                    <div className='flex-gap-inline' key={key}>
-                                                        <div>•</div>
-                                                        <div>{p}</div>
-                                                    </div>
-                                                )
-                                            })}
-                                        </div>
-                                    </div>
-                                    <div className='swiper-kotak-harga'>
-                                        <div>Mulai dari</div>
-                                        <div>{i.harga}</div>
-                                    </div>
+                                <div onClick={() => navigate('/paket/detail', { state: i })} className='button' style={{ width: '200px', backgroundColor: i.color, marginTop: '10px', gap: '5px' }}>
+                                    <div className='fas fa-circle-info fa-md'></div>
+                                    Detail paket
                                 </div>
                             </div>
                         </SwiperSlide>
@@ -177,9 +77,10 @@ const Paket = () => {
             <div id='bestPaket' className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), var(--background), rgba(0,0,0,0.9))`, padding: '50px 0' }}>
                 <div className='paket-card-container'>
                     <div className='paket-card-level'>
-                        <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'easy' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
-                        <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'medium' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Medium</div>
-                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '1rem', color: level == 'extreme' ? 'red' : 'red', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
+                        <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'easy' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
+                        <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'medium' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Medium</div>
+                        <div onClick={() => setLevel('semi-extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'semi-extreme' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Semi-extreme</div>
+                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'extreme' ? 'red' : 'red', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
                     </div>
                     {(level == 'easy') && 
                     <div className='paket-card-wrapper'>
@@ -195,6 +96,19 @@ const Paket = () => {
                         }))}
                     </div>}
                     {(level == 'medium') && 
+                    <div className='paket-card-wrapper'>
+                        {(mediumData.map((i, k) => {
+                            return(
+                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                    <div className='paket-card-title'>
+                                        <div>{i.level}</div>
+                                        <div>{i.title}</div>
+                                    </div>
+                                </div>
+                            )
+                        }))}
+                    </div>}
+                    {(level == 'semi-extreme') && 
                     <div className='paket-card-wrapper'>
                         {(mediumData.map((i, k) => {
                             return(
