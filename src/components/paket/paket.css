@@ -96,6 +96,10 @@
     color: white;
     /* color: red; */
 }
+.swiper-kotak-harga div:nth-child(3) {
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+}
 
 .box-container {
     max-width: 100%;

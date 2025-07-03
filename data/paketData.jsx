@@ -1,24 +1,24 @@
 export const easyData = [
     {
-        level: "Track Easy (A)",
+        level: "Trek Easy (A)",
         title: "Sungai Sangkuriang",
         desc: "",
         img: "/img/img4.jpeg"
     },
     {
-        level: "Track Easy (A)",
+        level: "Trek Easy (A)",
         title: "Hutan Pinus",
         desc: "",
         img: "/img/img1.jpeg"
     },
     {
-        level: "Track Easy (B)",
+        level: "Trek Easy (B)",
         title: "Curug Leuwi Hejo",
         desc: "",
         img: "/img/img7.jpeg"
     },
     {
-        level: "Track Easy (C)",
+        level: "Trek Easy (C)",
         title: "Hutan Bambu",
         desc: "",
         img: "/img/img15.jpeg"
@@ -28,28 +28,55 @@ export const easyData = [
 
 export const mediumData = [
     {
-        level: "Track Medium (C)",
-        title: "Curug Hordeng - Curug Ciburial",
+        level: "Trek Medium (A)",
+        title: "Goa Agung Galunggung",
         desc: "",
-        img: "/img/img25.jpeg"
+        img: "/img/medium-a/img4.jpeg"
     },
     {
-        level: "Track Medium (C)",
-        title: "Hutan Jaibon",
+        level: "Trek Medium (A)",
+        title: "Curug Leuwi Asih",
         desc: "",
-        img: "/img/img27.jpeg"
+        img: "/img/medium-a/img7.jpeg"
     },
     {
-        level: "Track Medium (C)",
-        title: "Curug Kembar",
+        level: "Trek Medium (B)",
+        title: "Curug Barong",
+        desc: "",
+        img: "/img/medium-b/img3.jpeg"
+    },
+    {
+        level: "Trek Medium (C)",
+        title: "Curug Ciburial",
         desc: "",
         img: "/img/img24.jpeg"
     },
+]
+
+export const semiExtremeData = [
     {
-        level: "Track Medium (C)",
-        title: "Perkebunan Kopi",
+        level: "Trek Semi-extreme",
+        title: "Bukit Paniisan (850 MDPL)",
         desc: "",
-        img: "/img/img19.jpeg"
+        img: "/img/semi-extreme/img5.jpeg"
+    },
+    {
+        level: "Trek Semi-extreme",
+        title: "Curug Ngumpet",
+        desc: "",
+        img: "/img/semi-extreme/img1.jpeg"
+    },
+    {
+        level: "Trek Semi-extreme",
+        title: "Curug Cibimbim",
+        desc: "",
+        img: "/img/semi-extreme/img3.jpeg"
+    },
+    {
+        level: "Trek Semi-extreme",
+        title: "Bukit Gunung Pancar",
+        desc: "",
+        img: "/img/semi-extreme/img4.jpeg"
     },
 ]
 

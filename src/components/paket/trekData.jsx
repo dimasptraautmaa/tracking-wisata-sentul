@@ -6,13 +6,14 @@ const trekData = [
         waktu: "2-3 Jam",
         jarak: "2-5 KM",
         harga: "Rp 150.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20easy%20jalur%20A",
         rute: [
             "Pesawahan",
             "Sungai Sangkuriang",
             "Hutan Pinus",
             "Kebun Singkong & Kebun Sereh",
             "Perbukitan",
-            "Curug Leuwi"
+            "Curug Leuwi Asih"
         ],
         wisata: {},
         pack: [
@@ -31,6 +32,7 @@ const trekData = [
         waktu: "2-3 Jam",
         jarak: "2-4 KM",
         harga: "Rp 150.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20easy%20jalur%20B",
         rute: [
             "Perkampungan Penduduk",
             "Pesawahan",
@@ -57,6 +59,7 @@ const trekData = [
         waktu: "2-3 Jam",
         jarak: "2-4 KM",
         harga: "Rp 150.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20easy%20jalur%20D",
         rute: [
             "Perkampungan Penduduk",
             "Sungai Putri Kencana",
@@ -79,24 +82,22 @@ const trekData = [
     // MEDIUM TREK \\
     {
         type: "Jalur A",
-        color: "var(--oren)",
+        color: "var(--yellow)",
         title: 'TREKKING MEDIUM',
         waktu: "3-4 Jam",
         jarak: "7-8 KM",
         harga: "Rp 165.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20medium%20jalur%20A",
         rute: [
-            "Susur Sungai",
-            "Terasering & Pesawahan",
+            "Pesawahan",
+            "Sungai Sangkuriang",
             "Hutan Pinus",
-            "Bukit",
+            "Perbukitan",
             "Perkebunan Singkong",
-            "Goa Agung Galunggung",
+            "Goa Agung Galunggung (lokasi wisata bersejarah)",
             "Perkebunan Serai",
             "Curug Leuwi Asih"
         ],
-        wisata: {
-            1: ["Goa Agung Galunggung"]
-        },
         pack: [
             "Jas Hujan",
             "Air Mineral dingin",
@@ -107,41 +108,47 @@ const trekData = [
     },
     {
         type: "Jalur B",
-        color: "var(--oren)",
+        color: "var(--yellow)",
         title: 'TREKKING MEDIUM',
         waktu: "3-4 Jam",
         jarak: "7-8 KM",
         harga: "Rp 165.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20medium%20jalur%20B",
         rute: [
-            "Susur Sungai",
-            "Terasering & Pesawahan",
-            "Hutan Pinus",
-            "Bukit",
-            "Perkebunan Singkong",
-            "Goa Agung Galunggung",
-            "Perkebunan Serai",
-            "Curug Leuwi Asih"
+            "Perkampungan Penduduk",
+            "Pesawahan",
+            "Perbukitan",
+            "Hutan Kopi"
         ],
         wisata: {
-            1: ["Curug Bareng", "Leuwi Cepet", "Leuwi Liek"],
-            2: ["Leuwi Baliung"],
-            3: ["Leuwi Hejo"]
+            1: ["Curug Barong", "Leuwi Cepet", "Leuwi Liek"],
         },
+        step : [
+            {
+                title: "Melanjutkan perjalanan menuju :",
+                destination: ["Curug Baliung"]
+            },
+            {
+                title: "Melanjutkan perjalanan menuju :",
+                destination: ["Leuwi Hejo - lokasi wisata penutup"]
+            },
+        ],
         pack: [
             "Jas Hujan",
             "Air Mineral dingin",
             "Trekking Pole",
             "Dokumentasi (Foto/Video)"
         ],
-        desc: "Trek Medium Jalur B memberikan pengalaman menyegarkan, cocok untuk Anda yang ingin menjelajah lebih jauh, menyatu dengan alam, dan mengeksplorasi keindahan tersembunyi Sentul.",
+        desc: "Trek B Medium menghadirkan perjalanan dengan jalur menengah yang memadukan keindahan alam dan nuansa lokal khas Sentul. Cocok untuk Anda yang ingin merasakan petualangan ringan namun tetap penuh variasi.",
     },
     {
         type: "Jalur C",
-        color: "var(--oren)",
+        color: "var(--yellow)",
         title: 'TREKKING MEDIUM',
         waktu: "4-5 Jam",
         jarak: "7-8 KM",
         harga: "Rp 165.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20medium%20jalur%20C",
         rute: [
             "Hutan Jaibon",
             "Perkebunan Kopi",
@@ -167,11 +174,12 @@ const trekData = [
     // SEMI EXTREME \\
     {
         type: "",
-        color: "var(--red)",
+        color: "var(--oren)",
         title: 'TREKKING SEMI-EXTREME',
         waktu: "5-6 Jam",
         jarak: "12 KM",
         harga: "Rp 195.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20semi-extreme",
         rute: [
             "Perbukitan",
             "Kebun Singkong",
@@ -193,6 +201,35 @@ const trekData = [
             "Dokumentasi (Foto/Video)"
         ],
         desc: "Bagi kamu yang siap menghadapi tantangan lebih serius, Trek Semi Ekstrem adalah pilihan tepat. Rute ini menyajikan medan variatif dengan elevasi yang menantang, lanskap alami yang menakjubkan, serta destinasi tersembunyi yang memuaskan jiwa petualang Anda.",
+    },
+    {
+        type: "",
+        color: "var(--red)",
+        title: 'TREKKING EXTREME',
+        waktu: "6-7 Jam",
+        jarak: "20 KM",
+        harga: "Rp 250.000/Orang",
+        msg: "Halo%2C%20saya%20mau%20tanya%20paket%20trekking%20extreme",
+        rute: [
+            "Perbukitan",
+            "Kebun Singkong",
+            "Bukit Gunung Pancar",
+            "Bukit Paniisan (850 MDPL)",
+            "Hutan Kopi",
+            "Hutan Bambu",
+            "Danau Cisadon"
+        ],
+        wisata: {
+            1: ["Gunung Pancar", "Bukit Paniisan (850 MDPL)"],
+            2: ["Curug Love", "Curug Putri", "Danau Cisadon"],
+        },
+        pack: [
+            "Jas Hujan",
+            "Air Mineral dingin",
+            "Trekking Pole",
+            "Dokumentasi (Foto/Video)"
+        ],
+        desc: "Trek Extreme ini cocok untuk kamu yang siap berkeringat dan ingin merasakan petualangan alam yang utuh!",
     },
 ]
 

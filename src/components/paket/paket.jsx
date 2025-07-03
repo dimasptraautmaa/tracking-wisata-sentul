@@ -2,7 +2,7 @@ import React from 'react'
 import trekData from './trekData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Parallax, Pagination, Navigation, Autoplay } from 'swiper/modules';
-import { easyData, extremeData, mediumData } from '../../../data/paketData';
+import { easyData, extremeData, mediumData, semiExtremeData } from '../../../data/paketData';
 
 import 'swiper/css';
 import './paket.css'
@@ -25,6 +25,7 @@ const Paket = () => {
                 '--swiper-navigation-color': '#fff',
                 '--swiper-pagination-color': 'var(--green)',
                 }}
+                loop={true}
                 grabCursor={true}
                 autoplay={{
                     delay: 5000,
@@ -80,7 +81,7 @@ const Paket = () => {
                         <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'easy' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
                         <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'medium' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Medium</div>
                         <div onClick={() => setLevel('semi-extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'semi-extreme' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Semi-extreme</div>
-                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'extreme' ? 'red' : 'red', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
+                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'extreme' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
                     </div>
                     {(level == 'easy') && 
                     <div className='paket-card-wrapper'>
@@ -110,7 +111,7 @@ const Paket = () => {
                     </div>}
                     {(level == 'semi-extreme') && 
                     <div className='paket-card-wrapper'>
-                        {(mediumData.map((i, k) => {
+                        {(semiExtremeData.map((i, k) => {
                             return(
                                 <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
                                     <div className='paket-card-title'>
