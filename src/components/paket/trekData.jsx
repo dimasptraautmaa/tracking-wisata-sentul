@@ -94,7 +94,7 @@ const trekData = [
             "Hutan Pinus",
             "Perbukitan",
             "Perkebunan Singkong",
-            "Goa Agung Galunggung (lokasi wisata bersejarah)",
+            "Goa Agung Garunggang (lokasi wisata bersejarah)",
             "Perkebunan Serai",
             "Curug Leuwi Asih"
         ],

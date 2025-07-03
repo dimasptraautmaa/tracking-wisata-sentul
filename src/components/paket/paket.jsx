@@ -25,7 +25,7 @@ const Paket = () => {
                 '--swiper-navigation-color': '#fff',
                 '--swiper-pagination-color': 'var(--green)',
                 }}
-                loop={true}
+                // loop={true}
                 grabCursor={true}
                 autoplay={{
                     delay: 5000,

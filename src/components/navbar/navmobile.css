@@ -13,6 +13,10 @@
     background-color: var(--background);
     display: none;
 }
+.navmobile.glass {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+}
 
 .navmobile.show {
     display: block;
