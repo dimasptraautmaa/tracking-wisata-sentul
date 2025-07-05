@@ -69,11 +69,12 @@
     font-weight: bold;
     text-align: center;
     color: var(--primary);
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
+    font-size: 1.2rem;
 }
 
 .swiper-kotak-harga {
@@ -141,6 +142,7 @@
     line-height: 1.5;
     color: var(--primary);
     font-weight: bold;
+    margin-top: 15px;
 }
 
 .swiper-konten {

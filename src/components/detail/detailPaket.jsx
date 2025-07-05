@@ -137,9 +137,24 @@ const DetailPaket = () => {
                         <div>{i.harga}</div>
                         <div>(Minimal 3 orang)</div>
                     </div>
-                    <div id={!i.wisata ? "thirdShow" : "lastShow"} style={{ display: 'flex', gap: '15px', justifyContent: 'center', marginTop: '20px', width: '100%' }}>
-                        <div className='button' style={{ width: '170px', fontSize: '0.85rem', backgroundColor: 'var(--primary)', color: 'white' }} onClick={() => navigate(-1)}>Paket lainnya</div>
-                        <div className='button' style={{ width: '170px', fontSize: '0.85rem', backgroundColor: i.color, gap: '5px' }} onClick={() => window.open(chat)}>
+                    <div className='paket-card-wrapper' style={{ width: '100%', marginTop: '30px' }}>
+                        {(i.img) && (i.img.map((im, imkey) => {
+                            return(
+                                <div key={imkey} className="paket-card"
+                                style={{ 
+                                    background: `url(${im})`, 
+                                    backgroundPosition: 'center', 
+                                    backgroundSize: 'cover',
+                                    borderRadius: '5px',
+                                    height: '280px'
+                                }}
+                                ></div>
+                            )
+                        }))}
+                    </div>
+                    <div className='abs-button'>
+                        <div className='button' style={{ width: '50%', borderRadius: '0px', height: '42px', fontSize: '0.85rem', backgroundColor: 'var(--primary)', color: 'white' }} onClick={() => navigate(-1)}>Paket lainnya</div>
+                        <div className='button' style={{ width: '50%', borderRadius: '0px', height: '42px', fontSize: '0.85rem', backgroundColor: i.color, gap: '5px' }} onClick={() => window.open(chat)}>
                             <div className='fab fa-whatsapp fa-xl'/>
                             Pesan paket
                         </div>

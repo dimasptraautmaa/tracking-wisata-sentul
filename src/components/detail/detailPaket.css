@@ -17,7 +17,8 @@
     /* border-left: 2px solid var(--primary); */
     width: 550px;
     max-width: 100%;
-    padding: 60px 10px;
+    padding: 50px 10px;
+    padding-bottom: 100px;
     height: max-content;
     box-sizing: border-box;
     max-height: 100%;
@@ -54,6 +55,16 @@
     opacity: 0;
     transform: translateY(20px);
     animation: showUp 0.3s linear 4s forwards;
+}
+
+.abs-button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 @keyframes showUp {
