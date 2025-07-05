@@ -18,8 +18,8 @@ export const easyData = [
         img: "/img/img7.jpeg"
     },
     {
-        level: "Trek Easy (C)",
-        title: "Hutan Bambu",
+        level: "Trek Easy (D)",
+        title: "Curug Love & Hutan Bambu",
         desc: "",
         img: "/img/img15.jpeg"
     },
@@ -41,7 +41,7 @@ export const mediumData = [
     },
     {
         level: "Trek Medium (B)",
-        title: "Curug Barong",
+        title: "Curug Cibaliung",
         desc: "",
         img: "/img/medium-b/img3.jpeg"
     },
