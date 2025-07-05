@@ -155,7 +155,7 @@ const Paket = () => {
                     backgroundColor: 'transparent',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    padding: '50px 20px',
+                    padding: width <= 550 ? "50px 0px" : '50px 20px',
                     flexDirection: 'column',
                     display: 'flex',
                     gap: '15px',
@@ -199,22 +199,22 @@ const Paket = () => {
                     <div className='box-small'>
                         <div className='fas fa-map fa-lg' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>20+</div>
-                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Rute Spesial Kami</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '500', textAlign: 'center' }}>Rute Spesial Kami</div>
                     </div>
                     <div className='box-small'>
                         <div className='fas fa-note-sticky fa-lg' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>2500+</div>
-                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Client trekking bersama kami</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '500', textAlign: 'center' }}>Client trekking bersama kami</div>
                     </div>
                     <div className='box-small'>
                         <div className='fas fa-clock fa-lg' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>5+</div>
-                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Tahun Kami menjadi provider</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '500', textAlign: 'center' }}>Tahun Kami menjadi provider</div>
                     </div>
                     <div className='box-small'>
                         <div className='fas fa-person-walking fa-xl' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>45+</div>
-                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Tour Guide Profesional</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '500', textAlign: 'center' }}>Tour Guide Profesional</div>
                     </div>
                 </div>
             </div>
