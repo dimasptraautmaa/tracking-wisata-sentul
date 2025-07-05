@@ -29,7 +29,7 @@ const DetailPaket = () => {
                         </div>
                     </div>
                     <div className='swiper-kotak-rute'>
-                        <div id='firstShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                        <div id='firstShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', fontSize: '1.1rem', marginTop: '10px' }}>
                             <div className='circle glass'><div className='fas fa-location-dot fa-sm'/></div>
                             Rute yang bakal kamu lewatin :
                         </div>
@@ -45,7 +45,7 @@ const DetailPaket = () => {
                         </div>
                         {i.wisata && i.wisata[1] && 
                             <>
-                            <div id='secondShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                            <div id='secondShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', fontSize: '1.1rem', marginTop: '10px' }}>
                                 <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
                                 Zona wisata ke - 1
                             </div>
@@ -63,7 +63,7 @@ const DetailPaket = () => {
                         }
                         {i.wisata && i.wisata[2] && 
                             <>
-                            <div id='secondShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                            <div id='secondShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', fontSize: '1.1rem', marginTop: '10px' }}>
                                 <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
                                 Zona wisata ke - 2
                             </div>
@@ -81,7 +81,7 @@ const DetailPaket = () => {
                         }
                         {i.wisata && i.wisata[3] && 
                             <>
-                            <div id='secondShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                            <div id='secondShow' style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', fontSize: '1.1rem', marginTop: '10px' }}>
                                 <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
                                 Zona wisata ke - 3
                             </div>
@@ -100,7 +100,7 @@ const DetailPaket = () => {
                         {i.step && i.step.map((st, stkey) => {
                             return(
                                 <>
-                                <div key={stkey} id={!i.wisata ? "secondShow" : "thirdShow"} style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                                <div key={stkey} id={!i.wisata ? "secondShow" : "thirdShow"} style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', fontSize: '1.1rem', marginTop: '10px' }}>
                                     <div className='circle glass'><div className='fas fa-location-dot fa-sm'></div></div>
                                     {st.title}
                                 </div>
@@ -117,7 +117,7 @@ const DetailPaket = () => {
                                 </>
                             )
                         })}
-                        <div id={!i.wisata ? "secondShow" : "thirdShow"} style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', marginTop: '10px' }}>
+                        <div id={!i.wisata ? "secondShow" : "thirdShow"} style={{ display: 'flex', color: i.color, gap: '10px', alignItems: 'center', fontWeight: '600', fontSize: '1.1rem', marginTop: '10px' }}>
                             <div className='circle glass'><div className='fas fa-box-open fa-sm'></div></div>
                             Fasilitas yang kamu dapat :
                         </div>
