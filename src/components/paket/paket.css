@@ -1,6 +1,5 @@
 .swiper {
   width: 100%;
-  background: #000;
 }
 
 .swiper-paket {
@@ -11,7 +10,6 @@
   padding: 40px 60px;
   display: flex;
   justify-content: space-evenly;
-  gap: 20px;
   font-family: var(--quicksand);
   position: relative;
 }
@@ -88,12 +86,14 @@
 }
 .swiper-kotak-harga div:nth-child(1) {
     font-size: 1rem;
-    color: rgb(210, 210, 210);
+    color: rgb(79, 79, 79);
+    font-family: var(--poppins);
+    font-weight: 400;
 }
 .swiper-kotak-harga div:nth-child(2) {
     font-size: 1.6rem;
     font-weight: bold;
-    color: white;
+    color: var(--primary);
     /* color: red; */
 }
 .swiper-kotak-harga div:nth-child(3) {
@@ -114,9 +114,10 @@
 .box-large {
     max-width: 100%;
     box-sizing: border-box;
-    width: 700px;
+    width: 850px;
     height: max-content;
     background-color: white;
+    border-radius: 5px;
     padding: 25px 20px;
 }
 
@@ -130,6 +131,8 @@
     align-items: center;
     gap: 10px;
     flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .swiper-kotak-rute {
@@ -149,6 +152,8 @@
     align-items: center;
     text-align: center;
     gap: 5px;
+    background-color: white;
+    border-radius: 5px;
 }
 .swiper-konten-title {
     font-size: 1.8rem;
@@ -179,7 +184,7 @@
 .paket-card-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 
 .paket-card-level {
@@ -245,8 +250,7 @@
 @media (max-width: 768px) {
     .swiper-paket{
         flex-direction: column;
-        justify-content: space-between;
-        gap: 10px;
+        justify-content: center;
     }
 
     .swiper-konten {
@@ -282,6 +286,6 @@
 
 @media (max-width: 465px) {
     .swiper-paket {
-        padding: 40px 20px;
+        padding: 40px 10px;
     }
 }

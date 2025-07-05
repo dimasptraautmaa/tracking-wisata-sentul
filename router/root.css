@@ -10,11 +10,11 @@ html {background-color: black; scroll-behavior: smooth;}
     --prime : #5a5a5a;
     --second : #0b0b0e;
     --text : #cccccc;
-    --yellow : rgb(228, 188, 88);
+    --yellow : rgb(228, 185, 77);
     --purple : #c49df4;
-    --red : #e05050;
-    --green : #76c893;
-    --oren : #dc8553;
+    --red : #d65454;
+    --green : #56c17b;
+    --oren : #dd824d;
     --blue : #d1edff;
 
     --quicksand : "quicksand", sans-serif;

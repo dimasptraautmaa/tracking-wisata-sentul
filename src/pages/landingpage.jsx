@@ -31,7 +31,7 @@ const LandingPage = () => {
                 <Navbar/>
                 <Hero/>
             </div>
-           <SwiperCard/>
+           {/* <SwiperCard/> */}
            <Paket/>
            <Testimoni/>
         </>

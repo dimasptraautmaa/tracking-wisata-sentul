@@ -2,28 +2,100 @@ import React from 'react'
 import trekData from './trekData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Parallax, Pagination, Navigation, Autoplay } from 'swiper/modules';
-import { easyData, extremeData, mediumData, semiExtremeData } from '../../../data/paketData';
+import { easyData, extremeData, mediumData, semiExtremeData } from '../../../data/dataByLevel';
 
 import 'swiper/css';
 import './paket.css'
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useNavigate } from 'react-router-dom';
+import SwiperCard from '../swiper/swiper';
 
 const Paket = () => {
 
     const navigate = useNavigate();
-
     const [ level, setLevel ] = React.useState('easy');
+    const [ width, setWidth ] = React.useState(window.innerWidth);
     const [ initialSlide, setInitialSlide ] = React.useState(localStorage.getItem('lastSlide') | 0);
 
     return (
         <>
-            <div id='paket' className='page'>
+            <div id='bestPaket' className='page' style={{
+                // background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), var(--background), rgba(0,0,0,0.9))`,
+                backgroundColor: 'white',
+                paddingBottom: '50px',
+                paddingTop: '30px'
+                }}>
+                <h1 style={{ fontFamily: 'var(--quicksand)', fontSize: '1.8rem', color: 'var(--primary)', textAlign: 'center' }}>HIGHLIGHT</h1>
+                <h1 style={{ fontFamily: 'var(--poppins)', fontSize: '1rem', color: '#808080', textAlign: 'center', marginBottom: '40px', fontWeight: '400' }}>zona wisata & rute lokasi trekking</h1>
+                <div className='paket-card-container'>
+                    <div className='paket-card-level'>
+                        <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'easy' ? 'var(--green)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
+                        <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'medium' ? 'var(--yellow)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Medium</div>
+                        <div onClick={() => setLevel('semi-extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'semi-extreme' ? 'var(--oren)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Semi-extreme</div>
+                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'extreme' ? 'var(--red)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
+                    </div>
+                    {(level == 'easy') && 
+                    <div className='paket-card-wrapper'>
+                        {(easyData.map((i, k) => {
+                            return(
+                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.95) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                    <div className='paket-card-title'>
+                                        <div>{i.level}</div>
+                                        <div>{i.title}</div>
+                                    </div>
+                                </div>
+                            )
+                        }))}
+                    </div>}
+                    {(level == 'medium') && 
+                    <div className='paket-card-wrapper'>
+                        {(mediumData.map((i, k) => {
+                            return(
+                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                    <div className='paket-card-title'>
+                                        <div style={{color: 'var(--yellow)'}}>{i.level}</div>
+                                        <div>{i.title}</div>
+                                    </div>
+                                </div>
+                            )
+                        }))}
+                    </div>}
+                    {(level == 'semi-extreme') && 
+                    <div className='paket-card-wrapper'>
+                        {(semiExtremeData.map((i, k) => {
+                            return(
+                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                    <div className='paket-card-title'>
+                                        <div style={{color: 'var(--oren)'}}>{i.level}</div>
+                                        <div>{i.title}</div>
+                                    </div>
+                                </div>
+                            )
+                        }))}
+                    </div>}
+                    {(level == 'extreme') && 
+                    <div className='paket-card-wrapper'>
+                        {(extremeData.map((i, k) => {
+                            return(
+                               <div key={k} className='paket-card' style={{ background: i.img ? `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})` : 'red', backgroundPosition: 'center', backgroundSize: 'cover' }}>
+                                    <div className='paket-card-title'>
+                                        <div style={{color: 'var(--red)'}}>{i.level}</div>
+                                        <div>{i.title}</div>
+                                    </div>
+                                </div>
+                            )
+                        }))}
+                    </div>}
+                </div>
+            </div>
+            <div id='paket' className='page' style={{ backgroundColor: 'transparent', padding: '0 10px' }}>
+                <h1 style={{ fontFamily: 'var(--quicksand)', fontSize: '1.8rem', color: 'white', textAlign: 'center', marginTop: '40px' }}>PAKET TREKKING</h1>
+                <h1 style={{ fontFamily: 'var(--poppins)', fontSize: '1rem', color: 'white', textAlign: 'center', marginBottom: '40px', fontWeight: '400' }}>tersedia mulai dari easy sampai extreme!</h1>
                 <Swiper
                 style={{
-                '--swiper-navigation-color': '#fff',
-                '--swiper-pagination-color': 'var(--green)',
+                '--swiper-navigation-color': width <= 550 ? 'var(--primary)' : 'white',
+                '--swiper-pagination-color': 'white',
                 }}
                 // loop={true}
                 grabCursor={true}
@@ -48,7 +120,8 @@ const Paket = () => {
                 slot="container-start"
                 className="parallax-bg"
                 style={{ 
-                    background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95)), url('img/img7.jpeg')`, 
+                    // background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.95)), url('img/img7.jpeg')`, 
+                    backgroundColor: 'transparent',
                     backgroundPosition: 'center', 
                     backgroundSize: 'cover'
                 }}
@@ -56,94 +129,33 @@ const Paket = () => {
                 ></div>
                 {trekData.map((i,k) => {
                     return(
-                        <SwiperSlide key={k} className='swiper-paket'>
-                            <div className='swiper-konten glass'>
-                                {i.type && <div className='glass' style={{ width: 'max-content', padding: '5px 30px', fontFamily: 'var(--quicksand)', fontWeight: 'bold', color: i.color, fontSize: '1.1rem', borderRadius: '50px', boxSizing: 'border-box' }}>{i.type}</div>}
+                        <SwiperSlide key={k} className='swiper-paket'style={{paddingTop: '0'}}>
+                            <div className='swiper-konten'>
                                 <div className='swiper-konten-title'><span style={{color: i.color}}>{i.title}</span></div>
+                                {i.type && <div style={{ width: 'max-content', padding: '5px 30px', backgroundColor: i.color, fontFamily: 'var(--quicksand)', fontWeight: 'bold', color: 'white', fontSize: '1.1rem', borderRadius: '50px', boxSizing: 'border-box' }}>{i.type}</div>}
                                 {/* <div className='swiper-konten-desc'>{sliceText(i.desc)}</div> */}
-                                    <div style={{ marginTop:'20px' }} className='swiper-kotak-harga'>
+                                    <div style={{ marginTop:'40px' }} className='swiper-kotak-harga'>
                                         <div>Mulai dari</div>
                                         <div>{i.harga}</div>
                                     </div>
-                                <div onClick={() => navigate('/paket/detail', { state: i })} className='button' style={{ width: '200px', backgroundColor: i.color, marginTop: '10px', gap: '5px' }}>
-                                    <div className='fas fa-circle-info fa-md'></div>
+                                <div onClick={() => navigate('/paket/detail', { state: i })} className='button' style={{ width: '200px', backgroundColor: i.color, marginTop: '10px', gap: '10px', fontWeight: '550', fontSize: '0.85rem' }}>
                                     Detail paket
+                                    <div className='fas fa-arrow-right fa-md'></div>
                                 </div>
                             </div>
                         </SwiperSlide>
                     )
                 })}
-            </Swiper>
+                </Swiper>
             </div>
-            <div id='bestPaket' className='page' style={{background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.9), var(--background), rgba(0,0,0,0.9))`, padding: '50px 0' }}>
-                <div className='paket-card-container'>
-                    <div className='paket-card-level'>
-                        <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'easy' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
-                        <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'medium' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Medium</div>
-                        <div onClick={() => setLevel('semi-extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'semi-extreme' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Semi-extreme</div>
-                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'extreme' ? 'white' : '#ccccccc5', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
-                    </div>
-                    {(level == 'easy') && 
-                    <div className='paket-card-wrapper'>
-                        {(easyData.map((i, k) => {
-                            return(
-                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.95) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-                                    <div className='paket-card-title'>
-                                        <div>{i.level}</div>
-                                        <div>{i.title}</div>
-                                    </div>
-                                </div>
-                            )
-                        }))}
-                    </div>}
-                    {(level == 'medium') && 
-                    <div className='paket-card-wrapper'>
-                        {(mediumData.map((i, k) => {
-                            return(
-                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-                                    <div className='paket-card-title'>
-                                        <div>{i.level}</div>
-                                        <div>{i.title}</div>
-                                    </div>
-                                </div>
-                            )
-                        }))}
-                    </div>}
-                    {(level == 'semi-extreme') && 
-                    <div className='paket-card-wrapper'>
-                        {(semiExtremeData.map((i, k) => {
-                            return(
-                                <div key={k} className='paket-card' style={{ background: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})`, backgroundPosition: 'center', backgroundSize: 'cover' }}>
-                                    <div className='paket-card-title'>
-                                        <div>{i.level}</div>
-                                        <div>{i.title}</div>
-                                    </div>
-                                </div>
-                            )
-                        }))}
-                    </div>}
-                    {(level == 'extreme') && 
-                    <div className='paket-card-wrapper'>
-                        {(extremeData.map((i, k) => {
-                            return(
-                               <div key={k} className='paket-card' style={{ background: i.img ? `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.98) ), url(${i.img})` : 'red', backgroundPosition: 'center', backgroundSize: 'cover' }}>
-                                    <div className='paket-card-title'>
-                                        <div>{i.level}</div>
-                                        <div>{i.title}</div>
-                                    </div>
-                                </div>
-                            )
-                        }))}
-                    </div>}
-                </div>
-            </div>
+            <SwiperCard/>
             <div className='page' 
                 style={{ 
-                    background: "linear-gradient(to bottom, rgba(0,0,0,0.98), rgba(0,0,0,0.45), rgba(0,0,0,0.98)), url('img/img3.jpeg')", 
+                    // background: "linear-gradient(to bottom, rgba(0,0,0,0.98), rgba(0,0,0,0.45), rgba(0,0,0,0.98)), url('img/img3.jpeg')", 
+                    backgroundColor: 'transparent',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
-                    padding: '0 20px',
-                    paddingBottom: '50px',
+                    padding: '50px 20px',
                     flexDirection: 'column',
                     display: 'flex',
                     gap: '15px',
@@ -152,15 +164,15 @@ const Paket = () => {
                     position: 'relative'
                 }}
             >
-                <div className='box-large glass'>
-                    <div style={{ color: 'white', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}><span>TREKKING SENTUL</span> 44</div>
-                    <div style={{ color: '#cccccce0', fontFamily: 'var(--quicksand)', fontSize: '0.99rem', marginTop: '5px', lineHeight: '1.5' }}>
+                <div className='box-large'>
+                    <div style={{ color: 'var(--primary)', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}><span>TREKKING SENTUL 44</span> </div>
+                    <div style={{ color: 'var(--primary)', fontFamily: 'var(--quicksand)', fontSize: '0.95rem', marginTop: '5px', lineHeight: '1.5', fontWeight: '500' }}>
                         Ayo Jelajahi Keajaiban Alam Sentul!
                         Bergabunglah bersama kami dalam petualangan seru yang penuh keindahan alam! Rasakan sensasi menjelajahi hutan tropis yang asri, segarnya cipratan air terjun alami, dan panorama perbukitan yang memukau.
                         Di TrekkingSentul44 setiap langkah adalah cerita, setiap momen adalah kenangan tak terlupakan.
                         Siapkan dirimu alam sedang memanggil!
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'var(--quicksand)', color: 'white', fontSize: '1rem', gap: '15px', marginTop: '30px' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'var(--quicksand)', color: 'var(--primary)', fontSize: '1rem', gap: '15px', marginTop: '30px', fontWeight: '600'}}>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                             <div className='fas fa-circle-check fa-lg'/>
                             <div>Provider Resmi dan sudah berizin</div>
@@ -184,25 +196,25 @@ const Paket = () => {
                     </div>
                 </div>
                 <div className='box-container'>
-                    <div className='box-small glass'>
+                    <div className='box-small'>
                         <div className='fas fa-map fa-lg' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>20+</div>
-                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Rute Spesial Kami</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Rute Spesial Kami</div>
                     </div>
-                    <div className='box-small glass'>
+                    <div className='box-small'>
                         <div className='fas fa-note-sticky fa-lg' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>2500+</div>
-                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Client trekking bersama kami</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Client trekking bersama kami</div>
                     </div>
-                    <div className='box-small glass'>
+                    <div className='box-small'>
                         <div className='fas fa-clock fa-lg' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>5+</div>
-                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Tahun Kami menjadi provider</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Tahun Kami menjadi provider</div>
                     </div>
-                    <div className='box-small glass'>
+                    <div className='box-small'>
                         <div className='fas fa-person-walking fa-xl' style={{color: 'var(--green)'}}></div>
                         <div style={{ fontFamily: 'var(--poppins)', fontSize: '2.2rem', color: 'var(--green)' }}>45+</div>
-                        <div style={{ fontFamily: 'var(--quicksand)', fontSize: '0.9rem', color: 'white', fontWeight: '600', textAlign: 'center' }}>Tour Guide Profesional</div>
+                        <div style={{ fontFamily: 'var(--poppins)', fontSize: '0.95rem', color: 'var(--primary)', fontWeight: '600', textAlign: 'center' }}>Tour Guide Profesional</div>
                     </div>
                 </div>
             </div>
