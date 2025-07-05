@@ -154,8 +154,8 @@ const DetailPaket = () => {
                     </div>
             </div>
             <div className='abs-button'>
-                <div className='button' style={{ width: '50%', borderRadius: '0px', height: '47px', fontSize: '0.85rem', backgroundColor: 'var(--primary)', color: 'white' }} onClick={() => navigate(-1)}>Paket lainnya</div>
-                <div className='button' style={{ width: '50%', borderRadius: '0px', height: '47px', fontSize: '0.85rem', backgroundColor: i.color, gap: '5px' }} onClick={() => window.open(chat)}>
+                <div className='button' style={{ width: '50%', borderRadius: '0px', height: '55px', fontSize: '0.85rem', backgroundColor: 'var(--primary)', color: 'white' }} onClick={() => navigate(-1)}>Paket lainnya</div>
+                <div className='button' style={{ width: '50%', borderRadius: '0px', height: '55px', fontSize: '0.85rem', backgroundColor: i.color, gap: '5px' }} onClick={() => window.open(chat)}>
                     <div className='fab fa-whatsapp fa-xl'/>
                        Pesan paket
                 </div>
