@@ -131,6 +131,7 @@ const Paket = () => {
                     return(
                         <SwiperSlide key={k} className='swiper-paket'style={{paddingTop: '0'}}>
                             <div className='swiper-konten'>
+                                <div className='swiper-konten-title'><span style={{color: i.color}}>PAKET</span></div>
                                 <div className='swiper-konten-title'><span style={{color: i.color}}>{i.title}</span></div>
                                 {i.type && <div style={{ width: 'max-content', padding: '5px 30px', backgroundColor: i.color, fontFamily: 'var(--quicksand)', fontWeight: 'bold', color: 'white', fontSize: '1.1rem', borderRadius: '50px', boxSizing: 'border-box' }}>{i.type}</div>}
                                 {/* <div className='swiper-konten-desc'>{sliceText(i.desc)}</div> */}
