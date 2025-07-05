@@ -30,10 +30,10 @@ const Paket = () => {
                 <h1 style={{ fontFamily: 'var(--poppins)', fontSize: '1rem', color: '#808080', textAlign: 'center', marginBottom: '40px', fontWeight: '400' }}>zona wisata & rute lokasi trekking</h1>
                 <div className='paket-card-container'>
                     <div className='paket-card-level'>
-                        <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'easy' ? 'var(--green)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Easy</div>
-                        <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'medium' ? 'var(--yellow)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Medium</div>
-                        <div onClick={() => setLevel('semi-extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'semi-extreme' ? 'var(--oren)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Semi-extreme</div>
-                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--quicksand)', fontSize: '0.8rem', color: level == 'extreme' ? 'var(--red)' : '#888888', fontWeight: 'bold', cursor: 'pointer' }}>Extreme</div>
+                        <div onClick={() => setLevel('easy')} style={{ fontFamily: 'var(--poppins)', fontWeight: '400', fontSize: '0.8rem', color: level == 'easy' ? 'var(--green)' : '#888888', cursor: 'pointer' }}>Easy</div>
+                        <div onClick={() => setLevel('medium')} style={{ fontFamily: 'var(--poppins)', fontWeight: '400', fontSize: '0.8rem', color: level == 'medium' ? 'var(--yellow)' : '#888888', cursor: 'pointer' }}>Medium</div>
+                        <div onClick={() => setLevel('semi-extreme')} style={{ fontFamily: 'var(--poppins)', fontWeight: '400', fontSize: '0.8rem', color: level == 'semi-extreme' ? 'var(--oren)' : '#888888', cursor: 'pointer' }}>Semi-extreme</div>
+                        <div onClick={() => setLevel('extreme')} style={{ fontFamily: 'var(--poppins)', fontWeight: '400', fontSize: '0.8rem', color: level == 'extreme' ? 'var(--red)' : '#888888', cursor: 'pointer' }}>Extreme</div>
                     </div>
                     {(level == 'easy') && 
                     <div className='paket-card-wrapper'>
@@ -166,13 +166,13 @@ const Paket = () => {
             >
                 <div className='box-large'>
                     <div style={{ color: 'var(--primary)', fontFamily: 'sans-serif', fontSize: '1.7rem', fontWeight: '600' }}><span>TREKKING SENTUL 44</span> </div>
-                    <div style={{ color: 'var(--primary)', fontFamily: 'var(--quicksand)', fontSize: '0.95rem', marginTop: '5px', lineHeight: '1.5', fontWeight: '500' }}>
+                    <div style={{ color: 'var(--primary)', fontFamily: 'var(--poppins)', fontSize: '1rem', marginTop: '5px', lineHeight: '1.5', fontWeight: '300' }}>
                         Ayo Jelajahi Keajaiban Alam Sentul!
                         Bergabunglah bersama kami dalam petualangan seru yang penuh keindahan alam! Rasakan sensasi menjelajahi hutan tropis yang asri, segarnya cipratan air terjun alami, dan panorama perbukitan yang memukau.
                         Di TrekkingSentul44 setiap langkah adalah cerita, setiap momen adalah kenangan tak terlupakan.
                         Siapkan dirimu alam sedang memanggil!
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'var(--quicksand)', color: 'var(--primary)', fontSize: '1rem', gap: '15px', marginTop: '30px', fontWeight: '600'}}>
+                    <div style={{ display: 'flex', flexDirection: 'column', fontFamily: 'var(--poppins)', color: 'var(--primary)', fontSize: '1rem', gap: '15px', marginTop: '30px', fontWeight: '400'}}>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
                             <div className='fas fa-circle-check fa-lg'/>
                             <div>Provider Resmi dan sudah berizin</div>

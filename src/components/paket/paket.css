@@ -68,7 +68,7 @@
 .swiper-kotak-jarak {
     font-weight: bold;
     text-align: center;
-    color: white;
+    color: var(--primary);
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -86,9 +86,9 @@
 }
 .swiper-kotak-harga div:nth-child(1) {
     font-size: 1rem;
-    color: rgb(79, 79, 79);
+    color: var(--primary);
     font-family: var(--poppins);
-    font-weight: 400;
+    font-weight: 100;
 }
 .swiper-kotak-harga div:nth-child(2) {
     font-size: 1.6rem;
@@ -98,7 +98,8 @@
 }
 .swiper-kotak-harga div:nth-child(3) {
     font-size: 1.1rem;
-    color: rgb(255, 255, 255);
+    color: var(--primary);
+    font-weight: bold;
 }
 
 .box-container {
@@ -138,7 +139,8 @@
 .swiper-kotak-rute {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: white;
+    color: var(--primary);
+    font-weight: bold;
 }
 
 .swiper-konten {

@@ -14,9 +14,9 @@ const DetailPaket = () => {
 
     return (
         <div className='detail-paket'>
-            <div className='detail-paket-container glass'>
+            <div className='detail-paket-container'>
                 <div id='title' style={{ fontFamily: 'var(--quicksand)', color: i.color, fontSize: '2rem', fontWeight: 'bold', textAlign: 'center' }}>{i.title.split("",(4))} {i.title.split(" ")[1]}</div>
-                    <div id='type' style={{ fontFamily: 'var(--poppins)', color: 'white', fontSize: '1.1rem', textAlign: 'center', transform: 'translateY(-5px)' }}>{i.type ? `( ${i.type} )` : ''}</div>
+                    <div id='type' style={{ fontFamily: 'var(--poppins)', color: 'var(--primary)', fontSize: '1.1rem', textAlign: 'center', transform: 'translateY(-5px)' }}>{i.type ? `( ${i.type} )` : ''}</div>
                     <div id='jarak' className='swiper-kotak-jarak'>
                         <div style={{display: 'flex', gap: '7px', alignItems: 'center'}}>
                             <span style={{color: i.color}}><div className='fas fa-map-location-dot fa-sm'/></span>
@@ -137,7 +137,7 @@ const DetailPaket = () => {
                         <div>{i.harga}</div>
                         <div>(Minimal 3 orang)</div>
                     </div>
-                    <div id={!i.wisata ? "thirdShow" : "lastShow"} style={{ display: 'flex', gap: '15px', justifyContent: 'center', marginTop: '30px', width: '100%' }}>
+                    <div id={!i.wisata ? "thirdShow" : "lastShow"} style={{ display: 'flex', gap: '15px', justifyContent: 'center', marginTop: '20px', width: '100%' }}>
                         <div className='button' style={{ width: '170px', fontSize: '0.85rem', backgroundColor: 'var(--primary)', color: 'white' }} onClick={() => navigate(-1)}>Paket lainnya</div>
                         <div className='button' style={{ width: '170px', fontSize: '0.85rem', backgroundColor: i.color, gap: '5px' }} onClick={() => window.open(chat)}>
                             <div className='fab fa-whatsapp fa-xl'/>
